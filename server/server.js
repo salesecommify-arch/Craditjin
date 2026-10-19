@@ -99,7 +99,9 @@ app.post("/api/verify-payment", (req, res) => {
     console.log(`[Payment Verified] Order: ${razorpay_order_id}, Payment: ${razorpay_payment_id}`);
     return res.json({ verified: true });
 });
-
+app.get("/", (req, res) => {
+    res.send("Creditjin Payment Backend is Running!");
+});
 app.listen(process.env.PORT || 5000, () => {
     console.log("Payment server running");
 });
